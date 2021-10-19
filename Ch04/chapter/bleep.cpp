@@ -2,7 +2,7 @@
 
 int main()
 {
-	string disliked = "Broccoli";
+	vector <string> disliked = {"Broccoli", "Cucumber", "Mirror"};
 	vector <string> words;
 
 	cout << "Please enter some words:\n";
@@ -17,7 +17,7 @@ int main()
 	cout << "\n\nThe words you entered:\n";
 	
 	for(int i = 0; i < words.size()-1; ++i){
-		if(words[i] != disliked)
+		if(words[i] != disliked[0] && words[i] != disliked[1] && words[i] != disliked[2])
 			cout << words[i] << '\n';
 		else
 			cout << "BLEEP\n";
