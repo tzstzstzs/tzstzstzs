@@ -7,8 +7,6 @@ constexpr double in_per_ft = 12;
 
 double convert_to_meter(double dis, string uni){
 
-	//int c = 0;
-
 	if (uni == "cm")
 		dis = dis / cm_per_m;
 
