@@ -1,51 +1,58 @@
-#include "std_lib_facilities.h
+#include "std_lib_facilities.h"
 
 int main(){
 
     vector <string> names;
     vector <int> scores;
 
-    cout << "Enter a name and score: "
+    cout << "Enter a name and score: ";
 
     string name;
     int score;
 
-    while(names[names.size()-1] == "0"){
-        cin >> names >> scores;
+    while(cin >> name >> score){
+        
+        if(name == "NoName" && score == 0) break;
 
-        names.push_back(name);
-        scores.push_back(score);
-    }
+        else{
 
-    for(i = 0; i < names.size(); ++i){
-        for(j = 0; j < names.size(); ++j){
-            if(names[j] == names[i] && j != i){
-                cout << "Error";
-                return 0;
+            names.push_back(name);
+            scores.push_back(score);
+
+            cout << "Enter a name and score: ";
+        }
+
+        for(int i = 0; i < names.size(); ++i){
+            for(int j = i + 1; j < names.size(); ++j){
+                if(names[j] == names[i] && j != i){
+                    cout << "Error, existing name.\n\n";
+                }
             }
         }
     }
 
     cout << "\n\nThe entered names and scores:\n";
 
-    for(i = 0; i < names.size(); ++i){
-        cout << names[i] << "\t" << scores [i] << "\n\n";
+    for(int i = 0; i < names.size(); ++i){
+        cout << names[i] << "\t" << scores [i] << "\n";
     }
 
-    cout << "Enter a name to get the score: ";
+    string temp;
 
-    while(name != "0"){
-        cin >> name;
+    cout << "Enter a name: ";
 
-        for(i = 0; i < names.size(); ++i){
-            if(name == names[i]){
-                cout << "Socre: " << scores[i] << "\n";
-                continue;
-            }
-            else
-                cout << "Name not found.\n\n";
+    while(temp != "|"){
+
+        cin >> temp;
+
+        for(int i = 0; i < names.size(); ++i){
+            if(temp == names[i])
+                cout << names[i] << "\t" << scores [i] << "\n";
         }
+
+        cout << "Enter a name: ";
     }
+
     return 0;
 }
 

@@ -10,11 +10,17 @@ int main(){
     string name;
     int score;
 
-    while(name == '0'){
-        cin >> name >> scores;
+    while(cin >> name >> score){
+        
+        if(name == "NoName" && score == 0) break;
 
-        names.push_back(name);
-        scores.push_back(score);
+        else{
+
+            names.push_back(name);
+            scores.push_back(score);
+
+            cout << "Enter a name and score: ";
+        }
     }
 
     for(int i = 0; i < names.size(); ++i){
@@ -28,7 +34,7 @@ int main(){
 
     cout << "\n\nThe entered names and scores:\n";
 
-    for(i = 0; i < names.size(); ++i){
+    for(int i = 0; i < names.size(); ++i){
         cout << names[i] << "\t" << scores [i] << "\n";
     }
 
