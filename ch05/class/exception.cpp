@@ -37,3 +37,4 @@ try {
 } catch (Bad_area) {
 	cout << "Bad arguments to area()\n";
 }
+
