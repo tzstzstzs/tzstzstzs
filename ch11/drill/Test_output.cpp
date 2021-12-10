@@ -17,7 +17,7 @@ int main()
 	cout << dec;
 
 	int a, b, c, d;
-	cin >> a >> hex >> b >> oct >> c >> d; // a b-t hexadecimális számrendszerben olvasSa be: (16^3)+(2*16^2)+(3*16)+4...
+	cin >> a >> hex >> b >> oct >> c >> d; // a b-t hexadecimális számrendszerben olvassa be: (16^3)+(2*16^2)+(3*16)+4...
 	cout << a << '\t' << b << '\t' << c << '\t' << d << '\n';
 
 	return 0;
