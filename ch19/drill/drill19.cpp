@@ -123,6 +123,8 @@ int main()
     cout << "S<double> read: " << sd2.get() << '\n';
     cout << "S<string> read: " << s2.get() << '\n';
     */
+
+    
     cout << "Vector<int>: (format: { val1, val2, val3 }) ";
     vector<int> vi2;
     read_val(vi2);
