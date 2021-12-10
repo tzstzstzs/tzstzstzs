@@ -64,6 +64,7 @@ try{
 	if (original_points.size() != processed_points.size())
         error("Something's wrong!");
     else cout << "Match" << endl;
+    
     for (int i = 0; i<original_points.size(); ++i) {
         if (original_points[i] != processed_points[i])
             error("Something's wrong!");
