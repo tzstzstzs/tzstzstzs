@@ -1,10 +1,10 @@
-#include "std_lib_facilities.h"
+#include "../../../std_lib_facilities.h"
 
 double rt(double a, double b, double c){
 
-	double r = sqrt((b * b) - (4 * a * c));
-
 	if ((b * b) - (4 * a * c) < 0) error("No real root.");
+
+	double r = sqrt((b * b) - (4 * a * c));
 
 	return r;
 

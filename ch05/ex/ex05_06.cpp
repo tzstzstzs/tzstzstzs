@@ -1,8 +1,10 @@
-#include "std_lib_facilities.h"
+#include "../../../std_lib_facilities.h"
+
+class out_of_limit{};
 
 double ctok(double temperature)
 {
-	if (temperature < -273.15) error("Non valid value.");
+	if (temperature < -273.15) throw out_of_limit{};
 
 	double kel = temperature + 273.15;
 	
@@ -12,7 +14,7 @@ double ctok(double temperature)
 
 double ktoc(double temperature)
 {
-	if (temperature < 0) error("Non valid value.");
+	if (temperature < 0) throw out_of_limit{};
 
 	double cel = temperature - 273.15;
 	
@@ -22,7 +24,7 @@ double ktoc(double temperature)
 
 double ctof(double temperature)
 {
-	if (temperature < -273.15) error("Non valid value.");
+	if (temperature < -273.15) throw out_of_limit{};
 
 	double far = 9.0 / 5.0 * (temperature + 32.0);
 	
@@ -32,7 +34,7 @@ double ctof(double temperature)
 
 double ftoc(double temperature)
 {
-	if (temperature < -169.527778) error("Non valid value.");
+	if (temperature < -169.527778) throw out_of_limit{};
 
 	double cel = 5.0 / 9.0 * (temperature - 32.0);
 	
@@ -40,11 +42,8 @@ double ftoc(double temperature)
 }
 
 
-
-
-
 int main()
-{
+try{
 	cout << "Enter temperature and unit: ";
 
 	double temperature = 0;
@@ -73,7 +72,8 @@ int main()
 
 	return 0;
 }
-
-    © 2021 GitHub, Inc.
-
-    Terms
+catch (out_of_limit){
+	cerr << ("too low value") << endl;
+	keep_window_open();
+	return 1;
+}

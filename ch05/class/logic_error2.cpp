@@ -3,8 +3,8 @@
 int main()
 {
 	
-	double min = numeric_limits<double>::lowest();
-	double max = numeric_limits<double>::max();
+	double min = -128.6;
+	double max = 134;
 	double sum = 0;
 
 

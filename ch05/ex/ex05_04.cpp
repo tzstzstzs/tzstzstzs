@@ -1,8 +1,10 @@
-#include "std_lib_facilities.h"
+#include "../../../std_lib_facilities.h"
+
+class out_of_limit{};
 
 double ctok(double c)
 {
-	if (c < -273.15) error("Non valid value.");
+	if (c < -273.15) throw out_of_limit{};
 	
 	double k = c + 273.15;
 	
@@ -10,7 +12,7 @@ double ctok(double c)
 }
 
 int main()
-{
+try{
 	double c = 0;
 
 	cin >> c;
@@ -20,4 +22,9 @@ int main()
 	cout << k << '\n';
 
 	return 0;
+}
+catch(out_of_limit){
+	cerr << "Too low value" << endl;
+	keep_window_open();
+	return 1;
 }
